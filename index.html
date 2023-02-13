@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation tutorial with transition and transform. </title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 96vw; height: 75vh;
+            background-color: rgb(0, 0, 51);
+            padding:20px ;
+            display: flex;
+            justify-content: space-around;
+        }
+        .animated{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;   /* Important to start the animation*/
+            background-color: rgb(160, 86, 229);
+            color: #fff;
+            padding: 5px;
+            border-radius: 15px;
+            text-align: center;
+            width: 10vw;
+            height: 10vh;
+        }
+
+        .animation{
+            /*Animations effesct to make H*/
+            animation-name: H;
+            animation-duration: 12s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: backwards;
+            /*animation-direction: reverse;*/
+            animation-delay: 2s;
+        }
+        .ani-trans{
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+        
+        }
+        .ani-trans:hover{
+            background-color: brown;
+            color: rgb(177, 177, 177);
+            border-radius: 5px;
+            width: 15vw;
+            height: 15vh;
+            box-shadow: 3px 3px 4px purple;
+            font-size: larger;
+            text-align: center;
+        }
+        .trans{
+            background-color: rgb(29, 24, 34);
+        
+        }
+        .transform:hover{
+            transform:scale(2);
+            transform: rotate(180deg);
+            transform: translate(50px, 50px);
+            transform: skew(50deg);  /*Latest property will work not all*/
+
+        }
+
+        @keyframes H {
+            0%{
+                top: 0;
+                left: 0;
+                
+            }
+            30%{
+                top: 400px;
+                left: 0;
+                }
+            45%{
+                top: 200px;
+                left: 0;
+            }
+            60%{
+                left: 300px;
+                top: 200px;
+            }   
+            75%{
+                left: 300px;
+                top: 0px;
+
+            }
+            100%{
+                top: 400px;
+                left: 300px;
+            }
+            
+        }
+
+    </style>
+
+
+<body>
+    <!-- Animation -->
+    <section class="container">
+        <div class="animated animation">
+            Hassan its your name 
+        </div>
+    </section>
+    <!-- Transiton and animation -->
+    <section class="container trans">
+        <div class=" animated animation ani-trans">
+            Hassan its your name 
+        </div> 
+    </section>
+    <!-- Animation, transition and transformation  -->
+    <div class="container">
+        <div class="animated animation ani-trans transform">
+            animation, transformation, transition
+        </div>
+    </div>
+</body>
+</html>
